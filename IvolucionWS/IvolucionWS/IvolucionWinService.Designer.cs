@@ -1,6 +1,6 @@
 ﻿namespace IvolucionWS
 {
-    partial class Service1
+    partial class IvolucionWinService
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,10 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.Temporizador = new System.Timers.Timer();
+            ((System.ComponentModel.ISupportInitialize)(this.Temporizador)).BeginInit();
+            // 
+            // Temporizador
+            // 
+            this.Temporizador.Enabled = true;
+            this.Temporizador.Elapsed += new System.Timers.ElapsedEventHandler(this.Temporizador_Elapsed);
+            // 
+            // IvolucionWinService
+            // 
             this.ServiceName = "Service1";
+            ((System.ComponentModel.ISupportInitialize)(this.Temporizador)).EndInit();
+
         }
 
         #endregion
+
+        private System.Timers.Timer Temporizador;
     }
 }

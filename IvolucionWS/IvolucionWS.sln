@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvolucionWS", "IvolucionWS\IvolucionWS.csproj", "{AE1F6A85-449D-444A-86AB-5119D6EE151C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeService", "CodeService\CodeService.csproj", "{6C5184CB-0FB4-47D8-A29F-00D5989836A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE1F6A85-449D-444A-86AB-5119D6EE151C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE1F6A85-449D-444A-86AB-5119D6EE151C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE1F6A85-449D-444A-86AB-5119D6EE151C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5184CB-0FB4-47D8-A29F-00D5989836A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5184CB-0FB4-47D8-A29F-00D5989836A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5184CB-0FB4-47D8-A29F-00D5989836A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5184CB-0FB4-47D8-A29F-00D5989836A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
