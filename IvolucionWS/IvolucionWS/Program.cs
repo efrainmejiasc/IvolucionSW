@@ -12,7 +12,10 @@ namespace IvolucionWS
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-      /*  static void Main()
+        /// 
+
+        // Comentar para probar como console
+        static void Main()
         {
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
@@ -20,26 +23,28 @@ namespace IvolucionWS
                 new IvolucionWinService()
             };
             ServiceBase.Run(ServicesToRun);
+        }
+
+
+        // Descomentar para probar como console
+        /* static void Main(string[] args)
+         {
+
+           if (Environment.UserInteractive)
+           {
+              IvolucionWinService service1 = new IvolucionWinService();
+              service1.TestStartupAndStop(args);
+           }
+          else
+          {
+              ServiceBase[] ServicesToRun;
+              ServicesToRun = new ServiceBase[]
+              {
+                new IvolucionWinService()
+              };
+              ServiceBase.Run(ServicesToRun);
+          }
+
         }*/
-
-        static void Main(string[] args)
-        {
-
-          if (Environment.UserInteractive)
-         {
-             IvolucionWinService service1 = new IvolucionWinService();
-             service1.TestStartupAndStop(args);
-         }
-         else
-         {
-             ServiceBase[] ServicesToRun;
-             ServicesToRun = new ServiceBase[]
-             {
-               new IvolucionWinService()
-             };
-             ServiceBase.Run(ServicesToRun);
-         }
-
-       }
     }
 }

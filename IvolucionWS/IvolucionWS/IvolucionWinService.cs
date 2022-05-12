@@ -1,4 +1,5 @@
 ﻿using CodeService;
+using CodeService.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,13 +22,13 @@ namespace IvolucionWS
             InitializeComponent();
         }
 
-
-        internal void TestStartupAndStop(string[] args)
+        //Descomentar paara probar como consola
+        /*internal void TestStartupAndStop(string[] args)
         {
             this.OnStart(args);
             Console.ReadLine();
             this.OnStop();
-        }
+        }*/
 
         protected override void OnStart(string[] args)
         {
@@ -48,7 +49,7 @@ namespace IvolucionWS
             this.serviceThread = new Thread(ServiceStart);
             this.serviceThread.Start();
 
-            Temporizador.Interval = (200000000);
+            Temporizador.Interval = (EnviromentVar.NumDays * EnviromentVar.MiliseconDay);
             Temporizador.Start();
         }
 
