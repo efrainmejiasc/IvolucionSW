@@ -26,13 +26,14 @@ namespace IvolucionWS
         private const string Job = "Job";
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        private static IScheduler _scheduler;
+       
 
         public IvolucionWinService()
         {
             InitializeComponent();
         }
 
+        private static IScheduler _scheduler;
         protected override void OnStart(string[] args)
         {
             ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
