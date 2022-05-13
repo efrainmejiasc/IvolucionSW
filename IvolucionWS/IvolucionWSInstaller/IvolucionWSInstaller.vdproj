@@ -15,62 +15,62 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_6AB631D7C7143BA03CFF071084DB65D6"
-        "OwnerKey" = "8:_8E006BA3D06E68BE557FC8538CB9EDE8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6AB631D7C7143BA03CFF071084DB65D6"
-        "OwnerKey" = "8:_DA2D0DE189B944DBAC57219061A40E69"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8E006BA3D06E68BE557FC8538CB9EDE8"
-        "OwnerKey" = "8:_DA2D0DE189B944DBAC57219061A40E69"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DA2D0DE189B944DBAC57219061A40E69"
+        "MsmKey" = "8:_15517A8ADB4D46E382C94607C2D2501E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F32660C5BB55AFE63A59236A4D7F0379"
-        "OwnerKey" = "8:_DA2D0DE189B944DBAC57219061A40E69"
+        "MsmKey" = "8:_6AB631D7C7143BA03CFF071084DB65D6"
+        "OwnerKey" = "8:_A8C604A2B7CFB2003945874FB3C4AC43"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6AB631D7C7143BA03CFF071084DB65D6"
+        "OwnerKey" = "8:_15517A8ADB4D46E382C94607C2D2501E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A8C604A2B7CFB2003945874FB3C4AC43"
+        "OwnerKey" = "8:_15517A8ADB4D46E382C94607C2D2501E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_F32660C5BB55AFE63A59236A4D7F0379"
-        "OwnerKey" = "8:_8E006BA3D06E68BE557FC8538CB9EDE8"
+        "OwnerKey" = "8:_15517A8ADB4D46E382C94607C2D2501E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DA2D0DE189B944DBAC57219061A40E69"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8E006BA3D06E68BE557FC8538CB9EDE8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6AB631D7C7143BA03CFF071084DB65D6"
+        "MsmKey" = "8:_F32660C5BB55AFE63A59236A4D7F0379"
+        "OwnerKey" = "8:_A8C604A2B7CFB2003945874FB3C4AC43"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F32660C5BB55AFE63A59236A4D7F0379"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_15517A8ADB4D46E382C94607C2D2501E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A8C604A2B7CFB2003945874FB3C4AC43"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6AB631D7C7143BA03CFF071084DB65D6"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -191,14 +191,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8E006BA3D06E68BE557FC8538CB9EDE8"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A8C604A2B7CFB2003945874FB3C4AC43"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:CodeService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8E006BA3D06E68BE557FC8538CB9EDE8"
+                    "_A8C604A2B7CFB2003945874FB3C4AC43"
                     {
                     "Name" = "8:CodeService.dll"
                     "Attributes" = "3:512"
@@ -310,7 +310,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IvolucionWSInstaller"
         "ProductCode" = "8:{92AD228A-0067-4E4C-8E07-9212A3A6394E}"
-        "PackageCode" = "8:{B5EEE27A-569B-4948-9062-6275A41D6EE2}"
+        "PackageCode" = "8:{38E5AC7E-14DB-45FB-AC8B-86BBA2FE1BC3}"
         "UpgradeCode" = "8:{6283D7E1-88D4-4CCC-9EE9-2F16D350CC64}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -829,9 +829,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DA2D0DE189B944DBAC57219061A40E69"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_15517A8ADB4D46E382C94607C2D2501E"
             {
-            "SourcePath" = "8:..\\IvolucionWS\\obj\\Release\\IvolucionWS.exe"
+            "SourcePath" = "8:..\\IvolucionWS\\obj\\Debug\\IvolucionWS.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0835190B08BD41CAAE85F54A9D7780AD"

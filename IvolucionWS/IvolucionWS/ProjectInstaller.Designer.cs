@@ -40,8 +40,8 @@
             // serviceInstaller1
             // 
             this.serviceInstaller1.Description = "Solicitudes para reportes desde Patagonian";
-            this.serviceInstaller1.DisplayName = "A_SolicitudReportesPatagonian";
-            this.serviceInstaller1.ServiceName = "A_SolicitudReportesPatagonian";
+            this.serviceInstaller1.DisplayName = "IvolucionWS";
+            this.serviceInstaller1.ServiceName = "IvolucionWS";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller

@@ -1,8 +1,8 @@
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\bin\Debug\CodeService.dll
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\bin\Debug\CodeService.pdb
-C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.csproj.CoreCompileInputs.cache
-C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.dll
-C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.pdb
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\bin\Debug\Newtonsoft.Json.dll
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.csproj.CoreCompileInputs.cache
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.csproj.CopyComplete
+C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.dll
+C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.pdb
