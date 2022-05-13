@@ -20,13 +20,7 @@ namespace IvolucionWS
 {
     public partial class IvolucionWinService : ServiceBase
     {
-        private Thread serviceThread;
-
-        private const string Group1 = "BusinessTasks";
-        private const string Job = "Job";
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
-       
 
         public IvolucionWinService()
         {
@@ -37,11 +31,8 @@ namespace IvolucionWS
         protected override void OnStart(string[] args)
         {
             ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
-            _scheduler = (IScheduler)schedulerFactory.GetScheduler();
+            _scheduler = schedulerFactory.GetScheduler().Result;
             _scheduler.Start();
-
-            ToolClass.WriteLogReportPatagonian("Inicio de servicio: " + DateTime.Now.ToString());
-
             AddJobs();
         }
 
@@ -52,30 +43,35 @@ namespace IvolucionWS
 
         public static void AddJobGetRequestReportPatagonian()
         {
-            const string trigger1 = "RequestReportPatagonian";
+           var trigger  = "PatagonianReports";
+           var detail = "Solicitud API para reportes";
+           var job = "JobRequestPatagonian";
 
-            IDoJob myJob = new RequestReportPatagonian();
-            var jobDetail = new JobDetailImpl(trigger1 + Job, Group1, myJob.GetType());
+            var myJob = new RequestReportPatagonian();
+            var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
                                                             /* every 10 minutes */
-            var trigger = new CronTriggerImpl(trigger1,Group1,"0 0/4 * * * ?" ) {TimeZone = TimeZoneInfo.Utc };
-            _scheduler.ScheduleJob(jobDetail, trigger);
+            var trigger1 = new CronTriggerImpl(trigger,detail,"0 0/4 * * * ?" ) {TimeZone = TimeZoneInfo.Utc };
+            _scheduler.ScheduleJob(jobDetail, trigger1);
 
-            var nextFireTime = trigger.GetNextFireTimeUtc();
+            var nextFireTime = trigger1.GetNextFireTimeUtc();
             if (nextFireTime != null)
-                ToolClass.WriteLogReportPatagonian(Group1 + " " + trigger1 + " " + new Exception(nextFireTime.Value.ToString("u")));
+                ToolClass.WriteLogReportPatagonian(detail + " " + trigger + " " + DateTime.Now.ToString());
         }
 
         public class RequestReportPatagonian : IDoJob
         {
-            public void Execute(IJobExecutionContext context)
-            {
-                ServiceStart();
-            }
 
             Task IJob.Execute(IJobExecutionContext context)
             {
-                ServiceStart();
-                return null;
+                Task taskA = new Task(() => ServiceStart());
+                taskA.Start();
+                return taskA;
+            }
+
+            private void ServiceStart()
+            {
+                var service = new ProccesService();
+                _ = service.InitProcessServiceAsync();
             }
         }
 
@@ -86,19 +82,12 @@ namespace IvolucionWS
 
         protected override void OnStop()
         {
-            ToolClass.WriteLogReportPatagonian("Final de servicio: " + DateTime.Now.ToString());
-        }
-
-
-        private static void ServiceStart()
-        {
-            var service = new ProccesService();
-           _ = service.InitProcessServiceAsync();
+            ToolClass.WriteLogReportPatagonian("Parando servicio: " + DateTime.Now.ToString());
         }
 
         public interface IDoJob : IJob
         {
-            new void Execute(IJobExecutionContext context);
+      
         }
     }
 }

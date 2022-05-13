@@ -25,4 +25,3 @@ C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeServic
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\bin\Debug\System.Memory.xml
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.csprojAssemblyReference.cache

@@ -16,9 +16,12 @@ namespace CodeService.Helpers
             var resultado = false;
             var lineLog = string.Empty;
             var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            // var pathLog = System.IO.Path.GetDirectoryName(path + @"C:\logFile.txt");
+#if DEBUG
+            var pathLog = System.IO.Path.GetDirectoryName(path);
+            pathLog = pathLog + @"\logFile.txt";
+#else
             var pathLog = @"C:\logFile.txt";
-
+#endif
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
             {
                 if(response == null)
@@ -50,7 +53,13 @@ namespace CodeService.Helpers
         public static bool WriteLogReportPatagonian(string lineLog)
         {
             var resultado = false;
+            var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+#if DEBUG
+            var pathLog = System.IO.Path.GetDirectoryName(path);
+            pathLog = pathLog + @"\logFile.txt";
+#else
             var pathLog = @"C:\logFile.txt";
+#endif
 
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
             {

@@ -19,8 +19,10 @@ namespace CodeService
 
         public async Task InitProcessServiceAsync()
         {
+            ToolClass.WriteLogReportPatagonian("Inicio de servicio: " + DateTime.Now.ToString());
             var result = await this._requestReportPatagonian.ExcuteReportPatagonian();
             ToolClass.WriteLogReportPatagonian(result);
+            ToolClass.WriteLogReportPatagonian("Final de servicio: " + DateTime.Now.ToString());
         }
     }
 }
