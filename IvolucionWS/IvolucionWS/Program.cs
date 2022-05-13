@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace IvolucionWS
 {
@@ -14,37 +12,21 @@ namespace IvolucionWS
         /// </summary>
         /// 
 
-        // Comentar para probar como console
-        static void Main()
-        {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+        
+            private static void Main(string[] args)
             {
-                new IvolucionWinService()
-            };
-            ServiceBase.Run(ServicesToRun);
-        }
-
-
-        // Descomentar para probar como console
-        /* static void Main(string[] args)
-         {
-
-           if (Environment.UserInteractive)
-           {
-              IvolucionWinService service1 = new IvolucionWinService();
-              service1.TestStartupAndStop(args);
-           }
-          else
-          {
-              ServiceBase[] ServicesToRun;
-              ServicesToRun = new ServiceBase[]
-              {
-                new IvolucionWinService()
-              };
-              ServiceBase.Run(ServicesToRun);
-          }
-
-        }*/
+#if DEBUG
+            var service1 = new IvolucionWinService();
+            service1.OnDebug();
+            System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
+#else
+                ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[]
+                {
+                  new IvolucionWinService()
+                };
+                ServiceBase.Run(ServicesToRun);
+#endif
+            }
     }
 }

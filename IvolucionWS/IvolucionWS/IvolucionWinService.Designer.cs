@@ -33,8 +33,7 @@
             // 
             // Temporizador
             // 
-            this.Temporizador.Enabled = true;
-            this.Temporizador.Elapsed += new System.Timers.ElapsedEventHandler(this.Temporizador_Elapsed);
+
             // 
             // IvolucionWinService
             // 

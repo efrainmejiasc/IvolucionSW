@@ -40,7 +40,22 @@ namespace CodeService.Helpers
                         file.WriteLine(lineLog);
                     }
                 }
-             
+
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public static bool WriteLogReportPatagonian(string lineLog)
+        {
+            var resultado = false;
+            var pathLog = @"C:\logFile.txt";
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
+            {
+                file.WriteLine(lineLog);
+                resultado = true;
             }
 
             return resultado;
