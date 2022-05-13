@@ -98,6 +98,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -137,6 +145,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_FCCA290F995F44808E9B6AEB8BD2E61B"
+            {
+            "Name" = "8:Resultado principal from IvolucionWS (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_15517A8ADB4D46E382C94607C2D2501E"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_A5039933_C89A_483F_BF16_4FF0BE46F243"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -310,7 +332,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IvolucionWSInstaller"
         "ProductCode" = "8:{92AD228A-0067-4E4C-8E07-9212A3A6394E}"
-        "PackageCode" = "8:{38E5AC7E-14DB-45FB-AC8B-86BBA2FE1BC3}"
+        "PackageCode" = "8:{CFE444DE-2558-48E1-A9E7-DB45DD11A662}"
         "UpgradeCode" = "8:{6283D7E1-88D4-4CCC-9EE9-2F16D350CC64}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
