@@ -73,7 +73,8 @@ namespace IvolucionWS
 
             Task IJob.Execute(IJobExecutionContext context)
             {
-                throw new NotImplementedException();
+                ServiceStart();
+                return null;
             }
         }
 
