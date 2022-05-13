@@ -350,4 +350,5 @@ MigrationBackup/
 .ionide/
 
 *.suo
+*.cache
 .suo
