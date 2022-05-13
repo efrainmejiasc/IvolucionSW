@@ -6,3 +6,4 @@ C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeServic
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.csproj.CopyComplete
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.dll
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.pdb
+C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.csprojAssemblyReference.cache

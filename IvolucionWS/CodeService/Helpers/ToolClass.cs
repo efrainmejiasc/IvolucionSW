@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CodeService.Helpers
 {
     public class ToolClass
@@ -14,8 +15,9 @@ namespace CodeService.Helpers
         {
             var resultado = false;
             var lineLog = string.Empty;
-            var pathLog = Directory.GetCurrentDirectory() + @"\logFile.txt";
-            ExistsFile(pathLog);
+            var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            // var pathLog = System.IO.Path.GetDirectoryName(path + @"C:\logFile.txt");
+            var pathLog = @"C:\logFile.txt";
 
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
             {
@@ -26,7 +28,7 @@ namespace CodeService.Helpers
                 }
                 else if (response.message != null)
                 {
-                    lineLog = "Fecha: " + DateTime.Now.ToString() + " " + "Proceso: Todos 400 BadRequest " + "Resultado: " + response.message;
+                    lineLog = "Fecha: " + DateTime.Now.ToString() + " " + "Proceso: Todos ERROR" + "Resultado: " + response.message;
                     file.WriteLine(lineLog);
                 }
                 else if(response.message == null)
@@ -42,14 +44,6 @@ namespace CodeService.Helpers
             }
 
             return resultado;
-        }
-
-        public static void ExistsFile(string path)
-        {
-            if (File.Exists(path))
-            {
-
-            }
         }
     }
 }
