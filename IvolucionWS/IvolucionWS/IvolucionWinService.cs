@@ -50,7 +50,8 @@ namespace IvolucionWS
             var myJob = new RequestReportPatagonian();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
                                                             /* every 10 minutes */
-            var trigger1 = new CronTriggerImpl(trigger,detail, "0 0 17 ? * FRI" ) {TimeZone = TimeZoneInfo.Utc };
+           // var trigger1 = new CronTriggerImpl(trigger,detail, "0 0 17 ? * FRI" ) {TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 14 ? * *") { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
