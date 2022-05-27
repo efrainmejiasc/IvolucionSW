@@ -52,7 +52,7 @@ namespace IvolucionWS
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
                                                             /* every 10 minutes */
            // var trigger1 = new CronTriggerImpl(trigger,detail, "0 0 17 ? * FRI" ) {TimeZone = TimeZoneInfo.Utc };
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 14 ? * *") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 22 ? * *") { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
@@ -74,7 +74,7 @@ namespace IvolucionWS
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
             if (nextFireTime != null)
-                ToolClass.WriteLogReportPatagonian(detail + " " + trigger + " " + DateTime.Now.ToString());
+                ToolClass.WriteLogSubmitNewCLNContents(detail + " " + trigger + " " + DateTime.Now.ToString());
         }
 
 
@@ -90,7 +90,7 @@ namespace IvolucionWS
             private void ServiceStart()
             {
                 var service = new ProccesService();
-                _ = service.InitProcessServiceAsync();
+                _ = service.InitProcessService2Async();
             }
         }
 
@@ -118,7 +118,8 @@ namespace IvolucionWS
 
         protected override void OnStop()
         {
-            ToolClass.WriteLogReportPatagonian("Parando servicio: " + DateTime.Now.ToString());
+            ToolClass.WriteLogReportPatagonian("Parando servicio: ON STOP " + DateTime.Now.ToString());
+            ToolClass.WriteLogSubmitNewCLNContents("Parando servicio: ON STOP " + DateTime.Now.ToString());
         }
 
         public interface IDoJob : IJob
