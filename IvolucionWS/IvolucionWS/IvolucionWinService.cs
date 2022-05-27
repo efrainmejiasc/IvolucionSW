@@ -38,6 +38,7 @@ namespace IvolucionWS
 
         private void AddJobs()
         {
+            AddJobSubmitNewCLNContents();
             AddJobGetRequestReportPatagonian();
         }
 
@@ -57,6 +58,40 @@ namespace IvolucionWS
             var nextFireTime = trigger1.GetNextFireTimeUtc();
             if (nextFireTime != null)
                 ToolClass.WriteLogReportPatagonian(detail + " " + trigger + " " + DateTime.Now.ToString());
+        }
+
+
+        public static void AddJobSubmitNewCLNContents()
+        {
+            var trigger = "SubmitNewCLNContents";
+            var detail = "Servicio CLN New Contents";
+            var job = "JobSubmitNewCLNContents";
+
+            var myJob = new RequestJobSubmitNewCLNContents();
+            var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 13 ? * *") { TimeZone = TimeZoneInfo.Utc };
+            _scheduler.ScheduleJob(jobDetail, trigger1);
+
+            var nextFireTime = trigger1.GetNextFireTimeUtc();
+            if (nextFireTime != null)
+                ToolClass.WriteLogReportPatagonian(detail + " " + trigger + " " + DateTime.Now.ToString());
+        }
+
+
+        public class RequestJobSubmitNewCLNContents : IDoJob
+        {
+            Task IJob.Execute(IJobExecutionContext context)
+            {
+                Task taskA = new Task(() => ServiceStart());
+                taskA.Start();
+                return taskA;
+            }
+
+            private void ServiceStart()
+            {
+                var service = new ProccesService();
+                _ = service.InitProcessServiceAsync();
+            }
         }
 
         public class RequestReportPatagonian : IDoJob
