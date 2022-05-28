@@ -20,7 +20,7 @@ namespace CodeService.Helpers
             var pathLog = System.IO.Path.GetDirectoryName(path);
             pathLog = pathLog + @"\logActivityPatagonian.txt";
 #else
-            var pathLog = @"C:\logActivityPatagonian.txt.txt";
+            var pathLog = @"C:\logActivityPatagonian.txt";
 #endif
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
             {
