@@ -19,9 +19,10 @@ namespace CodeService.Helpers
             }
             return valor;
         }
-
+        public static string ApiKeyIvolucion = ConfigurationManager.AppSettings["apiKeyIvolucion"];
         public static string UrlReportPatagonian = ConfigurationManager.AppSettings["urlReportPatagonian"];
+        public static string UrlSubmitNewCLN = ConfigurationManager.AppSettings["urlSubmitNewCLN"];
         public static int NumDays = Convert.ToInt32(ConfigurationManager.AppSettings["numDays"]);
-        public static int MiliseconDay = Convert.ToInt32(ConfigurationManager.AppSettings["miliseconDay "]);
+        public static int MiliseconDay = Convert.ToInt32(ConfigurationManager.AppSettings["miliseconDay"]);
     }
 }

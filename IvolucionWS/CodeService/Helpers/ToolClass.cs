@@ -18,9 +18,9 @@ namespace CodeService.Helpers
             var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
 #if DEBUG
             var pathLog = System.IO.Path.GetDirectoryName(path);
-            pathLog = pathLog + @"\logFile.txt";
+            pathLog = pathLog + @"\logActivityPatagonian.txt";
 #else
-            var pathLog = @"C:\logFile.txt";
+            var pathLog = @"C:\logActivityPatagonian.txt";
 #endif
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
             {
@@ -56,9 +56,9 @@ namespace CodeService.Helpers
             var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
 #if DEBUG
             var pathLog = System.IO.Path.GetDirectoryName(path);
-            pathLog = pathLog + @"\logFile.txt";
+            pathLog = pathLog + @"\logActivityPatagonian.txt";
 #else
-            var pathLog = @"C:\logFile.txt";
+            var pathLog = @"C:\logActivityPatagonian.txt";
 #endif
 
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
@@ -69,5 +69,28 @@ namespace CodeService.Helpers
 
             return resultado;
         }
+
+
+        public static bool WriteLogSubmitNewCLNContents(string lineLog)
+        {
+            var resultado = false;
+            var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+#if DEBUG
+            var pathLog = System.IO.Path.GetDirectoryName(path);
+            pathLog = pathLog + @"\logActivitySubmitNewCLN.txt";
+#else
+            var pathLog = @"C:\logActivitySubmitNewCLN.txt";
+#endif
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
+            {
+                file.WriteLine(lineLog);
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
     }
 }
+

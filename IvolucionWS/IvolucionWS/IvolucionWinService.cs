@@ -38,6 +38,7 @@ namespace IvolucionWS
 
         private void AddJobs()
         {
+            AddJobSubmitNewCLNContents();
             AddJobGetRequestReportPatagonian();
         }
 
@@ -49,14 +50,48 @@ namespace IvolucionWS
 
             var myJob = new RequestReportPatagonian();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
-                                                          
+                                                            /* every 10 minutes */
            // var trigger1 = new CronTriggerImpl(trigger,detail, "0 0 17 ? * FRI" ) {TimeZone = TimeZoneInfo.Utc };
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 15 ? * *") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 22 ? * WED") { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
             if (nextFireTime != null)
                 ToolClass.WriteLogReportPatagonian(detail + " " + trigger + " " + DateTime.Now.ToString());
+        }
+
+
+        public static void AddJobSubmitNewCLNContents()
+        {
+            var trigger = "SubmitNewCLNContents";
+            var detail = "Servicio CLN New Contents";
+            var job = "JobSubmitNewCLNContents";
+
+            var myJob = new RequestJobSubmitNewCLNContents();
+            var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 14 ? * MOD") { TimeZone = TimeZoneInfo.Utc };
+            _scheduler.ScheduleJob(jobDetail, trigger1);
+
+            var nextFireTime = trigger1.GetNextFireTimeUtc();
+            if (nextFireTime != null)
+                ToolClass.WriteLogSubmitNewCLNContents(detail + " " + trigger + " " + DateTime.Now.ToString());
+        }
+
+
+        public class RequestJobSubmitNewCLNContents : IDoJob
+        {
+            Task IJob.Execute(IJobExecutionContext context)
+            {
+                Task taskA = new Task(() => ServiceStart());
+                taskA.Start();
+                return taskA;
+            }
+
+            private void ServiceStart()
+            {
+                var service = new ProccesService();
+                _ = service.InitProcessService2Async();
+            }
         }
 
         public class RequestReportPatagonian : IDoJob
@@ -83,7 +118,8 @@ namespace IvolucionWS
 
         protected override void OnStop()
         {
-            ToolClass.WriteLogReportPatagonian("Parando servicio: " + DateTime.Now.ToString());
+            ToolClass.WriteLogReportPatagonian("Parando servicio: ON STOP " + DateTime.Now.ToString());
+            ToolClass.WriteLogSubmitNewCLNContents("Parando servicio: ON STOP " + DateTime.Now.ToString());
         }
 
         public interface IDoJob : IJob

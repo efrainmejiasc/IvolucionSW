@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CodeService</RootNamespace>
     <AssemblyName>CodeService</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,10 +79,12 @@
     <Compile Include="Helpers\EnviromentVar.cs" />
     <Compile Include="Helpers\ToolClass.cs" />
     <Compile Include="Interfaces\IRequestReportPatagonian.cs" />
+    <Compile Include="Interfaces\IRequestSubmitNewCLN.cs" />
     <Compile Include="Models\ResponseReportPatagonian.cs" />
     <Compile Include="ProccesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\RequestReportPatagonian.cs" />
+    <Compile Include="Services\RequestSubmitNewCLN.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

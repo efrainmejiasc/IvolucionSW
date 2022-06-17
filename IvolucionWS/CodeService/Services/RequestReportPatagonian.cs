@@ -24,6 +24,7 @@ namespace CodeService.Services
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("Apikey", EnviromentVar.ApiKeyIvolucion);
                 HttpResponseMessage response = await client.GetAsync(EnviromentVar.UrlReportPatagonian);
 
                 if (response.IsSuccessStatusCode)
