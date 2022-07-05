@@ -91,6 +91,28 @@ namespace CodeService.Helpers
             return resultado;
         }
 
+
+
+        public static bool WriteLogScheduledVirtualAppointmentsDone(string lineLog)
+        {
+            var resultado = false;
+            var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+#if DEBUG
+            var pathLog = System.IO.Path.GetDirectoryName(path);
+            pathLog = pathLog + @"\logActivityScheduledVirtualAppointments.txt";
+#else
+            var pathLog = @"C:\logActivityScheduledVirtualAppointments.txt";
+#endif
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
+            {
+                file.WriteLine(lineLog);
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
     }
 }
 

@@ -40,6 +40,7 @@ namespace IvolucionWS
         {
             AddJobSubmitNewCLNContents();
             AddJobGetRequestReportPatagonian();
+            AddJobRequestScheduledVirtualAppointmentsDone();
         }
 
         public static void AddJobGetRequestReportPatagonian()
@@ -50,9 +51,9 @@ namespace IvolucionWS
 
             var myJob = new RequestReportPatagonian();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
-                                                            /* every 10 minutes */
+                                                      
            // var trigger1 = new CronTriggerImpl(trigger,detail, "0 0 17 ? * FRI" ) {TimeZone = TimeZoneInfo.Utc };
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 22 ? * WED") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 22 ? * FRI") { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
@@ -75,6 +76,22 @@ namespace IvolucionWS
             var nextFireTime = trigger1.GetNextFireTimeUtc();
             if (nextFireTime != null)
                 ToolClass.WriteLogSubmitNewCLNContents(detail + " " + trigger + " " + DateTime.Now.ToString());
+        }
+
+        public static void AddJobRequestScheduledVirtualAppointmentsDone()
+        {
+            var trigger = "ScheduledVirtualAppointmentsDone";
+            var detail = "Servicio Citas de negocios virtuales realizadas";
+            var job = "JobRequestScheduledVirtualAppointmentsDone";
+
+            var myJob = new RequestScheduledVirtualAppointmentsDone();
+            var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 10 ? * *") { TimeZone = TimeZoneInfo.Utc };
+            _scheduler.ScheduleJob(jobDetail, trigger1);
+
+            var nextFireTime = trigger1.GetNextFireTimeUtc();
+            if (nextFireTime != null)
+                ToolClass.WriteLogScheduledVirtualAppointmentsDone(detail + " " + trigger + " " + DateTime.Now.ToString());
         }
 
 
@@ -111,6 +128,22 @@ namespace IvolucionWS
             }
         }
 
+        public class RequestScheduledVirtualAppointmentsDone : IDoJob
+        {
+            Task IJob.Execute(IJobExecutionContext context)
+            {
+                Task taskA = new Task(() => ServiceStart());
+                taskA.Start();
+                return taskA;
+            }
+
+            private void ServiceStart()
+            {
+                var service = new ProccesService();
+                _ = service.InitProcessService3Async();
+            }
+        }
+
         public void OnDebug()
         {
             OnStart(null);
@@ -120,6 +153,7 @@ namespace IvolucionWS
         {
             ToolClass.WriteLogReportPatagonian("Parando servicio: ON STOP " + DateTime.Now.ToString());
             ToolClass.WriteLogSubmitNewCLNContents("Parando servicio: ON STOP " + DateTime.Now.ToString());
+            ToolClass.WriteLogScheduledVirtualAppointmentsDone("Parando servicio: ON STOP " + DateTime.Now.ToString());
         }
 
         public interface IDoJob : IJob

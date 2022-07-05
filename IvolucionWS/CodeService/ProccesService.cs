@@ -36,5 +36,14 @@ namespace CodeService
             ToolClass.WriteLogSubmitNewCLNContents(linea + DateTime.Now.ToString());
             ToolClass.WriteLogSubmitNewCLNContents("Final de servicio: " + DateTime.Now.ToString());
         }
+
+        public async Task InitProcessService3Async()
+        {
+            ToolClass.WriteLogScheduledVirtualAppointmentsDone("Inicio de servicio: " + DateTime.Now.ToString());
+            var result = await this._requestSubmitNewCLN.GetRequestSubmitNewCLN();
+            var linea = result ? "Solicitud Citas de Negocios Virtuales Realizadas EXITOSA " : "Solicitud Citas de Negocios Virtuales Realizadas FALLIDA ";
+            ToolClass.WriteLogScheduledVirtualAppointmentsDone(linea + DateTime.Now.ToString());
+            ToolClass.WriteLogScheduledVirtualAppointmentsDone("Final de servicio: " + DateTime.Now.ToString());
+        }
     }
 }

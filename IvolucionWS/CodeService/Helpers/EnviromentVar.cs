@@ -22,6 +22,7 @@ namespace CodeService.Helpers
         public static string ApiKeyIvolucion = ConfigurationManager.AppSettings["apiKeyIvolucion"];
         public static string UrlReportPatagonian = ConfigurationManager.AppSettings["urlReportPatagonian"];
         public static string UrlSubmitNewCLN = ConfigurationManager.AppSettings["urlSubmitNewCLN"];
+        public static string UrlScheduledVirtualAppointmentsDone = ConfigurationManager.AppSettings["urlScheduledVirtualAppointmentsDone"];
         public static int NumDays = Convert.ToInt32(ConfigurationManager.AppSettings["numDays"]);
         public static int MiliseconDay = Convert.ToInt32(ConfigurationManager.AppSettings["miliseconDay"]);
     }
