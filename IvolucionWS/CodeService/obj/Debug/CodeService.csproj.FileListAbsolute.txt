@@ -49,7 +49,6 @@ C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\CodeService\bin\
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\CodeService\bin\Debug\System.Memory.xml
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\CodeService\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\CodeService\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.csprojAssemblyReference.cache
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.csproj.CopyComplete
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.dll
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\CodeService\obj\Debug\CodeService.pdb
