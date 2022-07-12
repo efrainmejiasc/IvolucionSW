@@ -14,7 +14,7 @@ namespace CodeService.Services
 {
     public class RequestReportPatagonian: IRequestReportPatagonian
     {
-        public async Task<ResponseReportPatagonian> ExcuteReportPatagonian()
+        public async Task<ResponseReportPatagonian> ExecuteReportPatagonian(string url)
         {
             var reportPatagonian = new ResponseReportPatagonian();
             var respuesta = string.Empty;
@@ -25,7 +25,7 @@ namespace CodeService.Services
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 client.DefaultRequestHeaders.Add("Apikey", EnviromentVar.ApiKeyIvolucion);
-                HttpResponseMessage response = await client.GetAsync(EnviromentVar.UrlReportPatagonian);
+                HttpResponseMessage response = await client.GetAsync(url);
 
                 if (response.IsSuccessStatusCode)
                 {
