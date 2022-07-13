@@ -20,7 +20,7 @@ namespace CodeService.Services
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("Apikey", EnviromentVar.ApiKeyIvolucion);
-            HttpResponseMessage response = await client.GetAsync(url);
+            HttpResponseMessage response = await client.PutAsync(url,null);
             if (response.IsSuccessStatusCode)
             {
                 respuesta = await response.Content.ReadAsStringAsync();
