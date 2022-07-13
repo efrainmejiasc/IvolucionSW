@@ -53,7 +53,7 @@ namespace IvolucionWS
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
                                                       
            // var trigger1 = new CronTriggerImpl(trigger,detail, "0 0 17 ? * FRI" ) {TimeZone = TimeZoneInfo.Utc };
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 22 ? * MOD") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 22 ? * FRI") { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
@@ -70,7 +70,7 @@ namespace IvolucionWS
 
             var myJob = new RequestJobSubmitNewCLNContents();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 14 ? * FRI") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 14 ? * MON") { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
