@@ -113,6 +113,47 @@ namespace CodeService.Helpers
             return resultado;
         }
 
+
+        public static bool WriteLogAlerts(string lineLog)
+        {
+            var resultado = false;
+            var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+#if DEBUG
+            var pathLog = System.IO.Path.GetDirectoryName(path);
+            pathLog = pathLog + @"\logActivityAlerts.txt";
+#else
+            var pathLog = @"C:\logActivityAlerts.txt";
+#endif
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
+            {
+                file.WriteLine(lineLog);
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public static bool WriteLogOffers(string lineLog)
+        {
+            var resultado = false;
+            var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+#if DEBUG
+            var pathLog = System.IO.Path.GetDirectoryName(path);
+            pathLog = pathLog + @"\logActivityOffers.txt";
+#else
+            var pathLog = @"C:\logActivityOffers.txt";
+#endif
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(pathLog, true))
+            {
+                file.WriteLine(lineLog);
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
     }
 }
 

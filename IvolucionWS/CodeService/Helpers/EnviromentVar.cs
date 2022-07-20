@@ -19,6 +19,7 @@ namespace CodeService.Helpers
             }
             return valor;
         }
+
         public static int NumDays = Convert.ToInt32(ConfigurationManager.AppSettings["numDays"]);
         public static int MiliseconDay = Convert.ToInt32(ConfigurationManager.AppSettings["miliseconDay"]);
 
@@ -28,16 +29,22 @@ namespace CodeService.Helpers
         public static string UrlReportPatagonianPruebas = ConfigurationManager.AppSettings["urlReportPatagonianPruebas"];
         public static string UrlSubmitNewCLNPruebas = ConfigurationManager.AppSettings["urlSubmitNewCLNPruebas"];
         public static string UrlScheduledVirtualAppointmentsDonePruebas = ConfigurationManager.AppSettings["urlScheduledVirtualAppointmentsDonePruebas"];
+        public static string UrlAlertsPruebas = ConfigurationManager.AppSettings["urlAlertsPruebas"];
+        public static string UrlOffersPruebas = ConfigurationManager.AppSettings["urlOffersPruebas"];
 
         public static bool preProduccion = Convert.ToBoolean(ConfigurationManager.AppSettings["preProduccion"]);
         public static string UrlReportPatagonianPreProduccion = ConfigurationManager.AppSettings["urlReportPatagonianPreProduccion"];
         public static string UrlSubmitNewCLNPreProduccion = ConfigurationManager.AppSettings["urlSubmitNewCLNPreProduccion"];
         public static string UrlScheduledVirtualAppointmentsDonePreProduccion = ConfigurationManager.AppSettings["urlScheduledVirtualAppointmentsDonePreProduccion"];
+        public static string UrlAlertsPreProduccion = ConfigurationManager.AppSettings["urlAlertsPreProduccion"];
+        public static string UrlOffersPreProduccion = ConfigurationManager.AppSettings["urlOffersPreProduccion"];
 
         public static bool produccion = Convert.ToBoolean(ConfigurationManager.AppSettings["produccion"]);
         public static string UrlReportPatagonianProduccion = ConfigurationManager.AppSettings["urlReportPatagonianProduccion"];
         public static string UrlSubmitNewCLNProduccion = ConfigurationManager.AppSettings["urlSubmitNewCLNProduccion"];
         public static string UrlScheduledVirtualAppointmentsDoneProduccion = ConfigurationManager.AppSettings["urlScheduledVirtualAppointmentsDoneProduccion"];
+        public static string UrlAlertsProduccion = ConfigurationManager.AppSettings["urlAlertsProduccion"];
+        public static string UrlOffersProduccion = ConfigurationManager.AppSettings["urlOffersProduccion"];
 
     }
 }

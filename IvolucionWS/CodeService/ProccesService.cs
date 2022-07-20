@@ -14,12 +14,17 @@ namespace CodeService
         private readonly IRequestReportPatagonian _requestReportPatagonian;
         private readonly IRequestSubmitNewCLN _requestSubmitNewCLN;
         private readonly IRequestScheduledVirtualAppointmentsDone _requestScheduledVirtualAppointmentsDone;
+        private readonly IRequestAlerts _requestAlerts;
+        private readonly IRequestOffers _requestOffers;
+
 
         public ProccesService()
         {
             this._requestReportPatagonian = new RequestReportPatagonian();
             this._requestSubmitNewCLN = new RequestSubmitNewCLN();
             this._requestScheduledVirtualAppointmentsDone = new RequestScheduledVirtualAppointmentsDone();
+            this._requestAlerts = new RequestAlerts();
+            this._requestOffers = new RequestOffers();
         }
 
         public async Task InitProcessServiceAsync()
@@ -110,6 +115,69 @@ namespace CodeService
                 ToolClass.WriteLogScheduledVirtualAppointmentsDone("Final de servicio produccion: " + DateTime.Now.ToString());
             }
             
+        }
+
+
+        public async Task InitProcessService4Async()
+        {
+            if (EnviromentVar.pruebas)
+            {
+                ToolClass.WriteLogAlerts("Inicio de servicio pruebas: " + DateTime.Now.ToString());
+                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlScheduledVirtualAppointmentsDonePruebas);
+                var linea = result ? "Envio de alertas EXITOSA pruebas" : "Envio de alertas Realizadas FALLIDA pruebas ";
+                ToolClass.WriteLogAlerts(linea + DateTime.Now.ToString());
+                ToolClass.WriteLogAlerts("Final de servicio pruebas: " + DateTime.Now.ToString());
+            }
+
+            if (EnviromentVar.preProduccion)
+            {
+                ToolClass.WriteLogAlerts("Inicio de servicio preproduccion: " + DateTime.Now.ToString());
+                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlScheduledVirtualAppointmentsDonePreProduccion);
+                var linea = result ? "Envio de alertas EXITOSA preproduccion " : "Envio de alertas FALLIDA preproduccion ";
+                ToolClass.WriteLogAlerts(linea + DateTime.Now.ToString());
+                ToolClass.WriteLogAlerts("Final de servicio preproduccion: " + DateTime.Now.ToString());
+            }
+
+            if (EnviromentVar.produccion)
+            {
+                ToolClass.WriteLogAlerts("Inicio de servicio produccion: " + DateTime.Now.ToString());
+                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlScheduledVirtualAppointmentsDoneProduccion);
+                var linea = result ? "Envio de alertas EXITOSA produccion " : "Envio de alertas FALLIDA produccion ";
+                ToolClass.WriteLogAlerts(linea + DateTime.Now.ToString());
+                ToolClass.WriteLogAlerts("Final de servicio produccion: " + DateTime.Now.ToString());
+            }
+
+        }
+
+        public async Task InitProcessService5Async()
+        {
+            if (EnviromentVar.pruebas)
+            {
+                ToolClass.WriteLogOffers("Inicio de servicio pruebas: " + DateTime.Now.ToString());
+                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlScheduledVirtualAppointmentsDonePruebas);
+                var linea = result ? "Envio de ofertas EXITOSA pruebas" : "Envio de ofertas FALLIDA pruebas ";
+                ToolClass.WriteLogOffers(linea + DateTime.Now.ToString());
+                ToolClass.WriteLogOffers("Final de servicio pruebas: " + DateTime.Now.ToString());
+            }
+
+            if (EnviromentVar.preProduccion)
+            {
+                ToolClass.WriteLogOffers("Inicio de servicio preproduccion: " + DateTime.Now.ToString());
+                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlScheduledVirtualAppointmentsDonePreProduccion);
+                var linea = result ? "Envio de ofertas EXITOSA preproduccion " : "Envio de ofertas FALLIDA preproduccion ";
+                ToolClass.WriteLogOffers(linea + DateTime.Now.ToString());
+                ToolClass.WriteLogOffers("Final de servicio preproduccion: " + DateTime.Now.ToString());
+            }
+
+            if (EnviromentVar.produccion)
+            {
+                ToolClass.WriteLogOffers("Inicio de servicio produccion: " + DateTime.Now.ToString());
+                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlScheduledVirtualAppointmentsDoneProduccion);
+                var linea = result ? "Envio de ofertas EXITOSA produccion " : "Envio de ofertas FALLIDA produccion ";
+                ToolClass.WriteLogOffers(linea + DateTime.Now.ToString());
+                ToolClass.WriteLogOffers("Final de servicio produccion: " + DateTime.Now.ToString());
+            }
+
         }
     }
 }
