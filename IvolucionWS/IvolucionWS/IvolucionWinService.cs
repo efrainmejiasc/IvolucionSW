@@ -60,6 +60,8 @@ namespace IvolucionWS
             AddJobSubmitNewCLNContents();
             AddJobGetRequestReportPatagonian();
             AddJobRequestScheduledVirtualAppointmentsDone();
+            AddJobRequestAlerts();
+            AddJobRequestOffers();
         }
 
         public interface IDoJob : IJob
@@ -195,7 +197,7 @@ namespace IvolucionWS
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
             if (nextFireTime != null)
-                ToolClass.WriteLogScheduledVirtualAppointmentsDone(detail + " " + trigger + " " + DateTime.Now.ToString());
+                ToolClass.WriteLogAlerts(detail + " " + trigger + " " + DateTime.Now.ToString());
         }
 
         public class RequestAlerts : IDoJob
@@ -232,7 +234,7 @@ namespace IvolucionWS
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
             if (nextFireTime != null)
-                ToolClass.WriteLogScheduledVirtualAppointmentsDone(detail + " " + trigger + " " + DateTime.Now.ToString());
+                ToolClass.WriteLogOffers(detail + " " + trigger + " " + DateTime.Now.ToString());
         }
 
         public class RequestOffers : IDoJob
