@@ -123,7 +123,7 @@ namespace CodeService
             if (EnviromentVar.pruebas)
             {
                 ToolClass.WriteLogAlerts("Inicio de servicio pruebas: " + DateTime.Now.ToString());
-                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlScheduledVirtualAppointmentsDonePruebas);
+                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlAlertsPruebas);
                 var linea = result ? "Envio de alertas EXITOSA pruebas" : "Envio de alertas Realizadas FALLIDA pruebas ";
                 ToolClass.WriteLogAlerts(linea + DateTime.Now.ToString());
                 ToolClass.WriteLogAlerts("Final de servicio pruebas: " + DateTime.Now.ToString());
@@ -132,7 +132,7 @@ namespace CodeService
             if (EnviromentVar.preProduccion)
             {
                 ToolClass.WriteLogAlerts("Inicio de servicio preproduccion: " + DateTime.Now.ToString());
-                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlScheduledVirtualAppointmentsDonePreProduccion);
+                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlAlertsPreProduccion);
                 var linea = result ? "Envio de alertas EXITOSA preproduccion " : "Envio de alertas FALLIDA preproduccion ";
                 ToolClass.WriteLogAlerts(linea + DateTime.Now.ToString());
                 ToolClass.WriteLogAlerts("Final de servicio preproduccion: " + DateTime.Now.ToString());
@@ -141,7 +141,7 @@ namespace CodeService
             if (EnviromentVar.produccion)
             {
                 ToolClass.WriteLogAlerts("Inicio de servicio produccion: " + DateTime.Now.ToString());
-                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlScheduledVirtualAppointmentsDoneProduccion);
+                var result = await this._requestAlerts.GetRequestAlerts(EnviromentVar.UrlAlertsProduccion);
                 var linea = result ? "Envio de alertas EXITOSA produccion " : "Envio de alertas FALLIDA produccion ";
                 ToolClass.WriteLogAlerts(linea + DateTime.Now.ToString());
                 ToolClass.WriteLogAlerts("Final de servicio produccion: " + DateTime.Now.ToString());
@@ -154,7 +154,7 @@ namespace CodeService
             if (EnviromentVar.pruebas)
             {
                 ToolClass.WriteLogOffers("Inicio de servicio pruebas: " + DateTime.Now.ToString());
-                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlScheduledVirtualAppointmentsDonePruebas);
+                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlOffersPruebas);
                 var linea = result ? "Envio de ofertas EXITOSA pruebas" : "Envio de ofertas FALLIDA pruebas ";
                 ToolClass.WriteLogOffers(linea + DateTime.Now.ToString());
                 ToolClass.WriteLogOffers("Final de servicio pruebas: " + DateTime.Now.ToString());
@@ -163,7 +163,7 @@ namespace CodeService
             if (EnviromentVar.preProduccion)
             {
                 ToolClass.WriteLogOffers("Inicio de servicio preproduccion: " + DateTime.Now.ToString());
-                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlScheduledVirtualAppointmentsDonePreProduccion);
+                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlOffersPreProduccion);
                 var linea = result ? "Envio de ofertas EXITOSA preproduccion " : "Envio de ofertas FALLIDA preproduccion ";
                 ToolClass.WriteLogOffers(linea + DateTime.Now.ToString());
                 ToolClass.WriteLogOffers("Final de servicio preproduccion: " + DateTime.Now.ToString());
@@ -172,7 +172,7 @@ namespace CodeService
             if (EnviromentVar.produccion)
             {
                 ToolClass.WriteLogOffers("Inicio de servicio produccion: " + DateTime.Now.ToString());
-                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlScheduledVirtualAppointmentsDoneProduccion);
+                var result = await this._requestOffers.GetRequestOffers(EnviromentVar.UrlOffersProduccion);
                 var linea = result ? "Envio de ofertas EXITOSA produccion " : "Envio de ofertas FALLIDA produccion ";
                 ToolClass.WriteLogOffers(linea + DateTime.Now.ToString());
                 ToolClass.WriteLogOffers("Final de servicio produccion: " + DateTime.Now.ToString());

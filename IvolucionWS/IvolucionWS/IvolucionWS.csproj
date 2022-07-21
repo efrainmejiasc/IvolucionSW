@@ -113,7 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeService\CodeService.csproj">
-      <Project>{6C5184CB-0FB4-47D8-A29F-00D5989836A6}</Project>
+      <Project>{6c5184cb-0fb4-47d8-a29f-00d5989836a6}</Project>
       <Name>CodeService</Name>
     </ProjectReference>
   </ItemGroup>
