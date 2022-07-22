@@ -81,7 +81,7 @@ namespace IvolucionWS
             var myJob = new RequestReportPatagonian();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
                                                       
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 22 ? * FRI") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, EnviromentVar.ExpresionPatagonian) { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
@@ -119,7 +119,7 @@ namespace IvolucionWS
 
             var myJob = new RequestJobSubmitNewCLNContents();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 14 ? * MON") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, EnviromentVar.ExpresionSubmitNewCLN) { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
@@ -156,7 +156,7 @@ namespace IvolucionWS
 
             var myJob = new RequestScheduledVirtualAppointmentsDone();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0 10 ? * *") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, EnviromentVar.ExpresionVirtualAppointments) { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
@@ -192,7 +192,7 @@ namespace IvolucionWS
 
             var myJob = new RequestAlerts();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0/6 * * * ?") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, EnviromentVar.ExpresionAlerts) { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();
@@ -229,7 +229,7 @@ namespace IvolucionWS
 
             var myJob = new RequestOffers();
             var jobDetail = new JobDetailImpl(trigger + " " + job, detail, myJob.GetType());
-            var trigger1 = new CronTriggerImpl(trigger, detail, "0 0/12 * * * ?") { TimeZone = TimeZoneInfo.Utc };
+            var trigger1 = new CronTriggerImpl(trigger, detail, EnviromentVar.ExpresionOffers) { TimeZone = TimeZoneInfo.Utc };
             _scheduler.ScheduleJob(jobDetail, trigger1);
 
             var nextFireTime = trigger1.GetNextFireTimeUtc();

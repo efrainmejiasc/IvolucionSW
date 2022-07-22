@@ -46,5 +46,13 @@ namespace CodeService.Helpers
         public static string UrlAlertsProduccion = ConfigurationManager.AppSettings["urlAlertsProduccion"];
         public static string UrlOffersProduccion = ConfigurationManager.AppSettings["urlOffersProduccion"];
 
+        public static string ExpresionAlerts = ConfigurationManager.AppSettings["expresionAlerts"];
+        public static string ExpresionOffers = ConfigurationManager.AppSettings["expresionOffers"];
+        public static string ExpresionPatagonian = ConfigurationManager.AppSettings["expresionPatagonian"];
+        public static string ExpresionSubmitNewCLN = ConfigurationManager.AppSettings["expresionSubmitNewCLN"];
+        public static string ExpresionVirtualAppointments = ConfigurationManager.AppSettings["expresionVirtualAppointments"];
+        public static int InitOffers = Convert.ToInt32(ConfigurationManager.AppSettings["initOffers"]);
+        public static int EndOffers = Convert.ToInt32(ConfigurationManager.AppSettings["endOffers"]);
+
     }
 }
