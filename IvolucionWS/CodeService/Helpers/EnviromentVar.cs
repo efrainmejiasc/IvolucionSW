@@ -54,5 +54,8 @@ namespace CodeService.Helpers
         public static int InitOffers = Convert.ToInt32(ConfigurationManager.AppSettings["initOffers"]);
         public static int EndOffers = Convert.ToInt32(ConfigurationManager.AppSettings["endOffers"]);
 
+        public static string Hours = ConfigurationManager.AppSettings["hours"];
+        public static int[]  Hour = {0,1,2,3,4,5,11,12,13,14,15,16,17,18,19,20,21,22,23};
+
     }
 }

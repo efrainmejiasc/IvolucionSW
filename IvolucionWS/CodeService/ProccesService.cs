@@ -180,8 +180,9 @@ namespace CodeService
         {
             try
             {
-                var currentHour = DateTime.UtcNow.Hour;
-                if (currentHour >= EnviromentVar.InitOffers && currentHour <= EnviromentVar.EndOffers)
+                var currentHour = DateTime.UtcNow.Hour.ToString();
+                var lstHour = EnviromentVar.Hours;
+                if (lstHour.Contains(currentHour))
                 {
                     if (EnviromentVar.pruebas)
                     {
