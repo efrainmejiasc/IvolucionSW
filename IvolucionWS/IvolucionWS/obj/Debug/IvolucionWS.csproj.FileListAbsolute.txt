@@ -32,13 +32,13 @@ C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\IvolucionW
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\IvolucionWS\obj\Debug\IvolucionWS.csproj.CopyComplete
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\IvolucionWS\obj\Debug\IvolucionWS.exe
 C:\Users\EfrainMejiasC\Documents\Repositorios\IvolucionSW\IvolucionWS\IvolucionWS\obj\Debug\IvolucionWS.pdb
+C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\Newtonsoft.Json.dll
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\IvolucionWS.exe.config
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\IvolucionWS.exe
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\IvolucionWS.pdb
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\CodeService.dll
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\log4net.dll
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\Newtonsoft.Json.dll
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\Quartz.dll
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\Quartz.Jobs.dll
 C:\Users\EfrainMejiasC\Documents\GitHub\IvolucionSW\IvolucionWS\IvolucionWS\bin\Debug\System.Buffers.dll
