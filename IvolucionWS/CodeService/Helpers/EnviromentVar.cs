@@ -23,7 +23,9 @@ namespace CodeService.Helpers
         public static int NumDays = Convert.ToInt32(ConfigurationManager.AppSettings["numDays"]);
         public static int MiliseconDay = Convert.ToInt32(ConfigurationManager.AppSettings["miliseconDay"]);
 
-        public static string ApiKeyIvolucion = ConfigurationManager.AppSettings["apiKeyIvolucion"];
+        public static string ApiKeyIvolucionPruebas = ConfigurationManager.AppSettings["apiKeyIvolucionPruebas"];
+        public static string ApiKeyIvolucionPreProduccion = ConfigurationManager.AppSettings["apiKeyIvolucionPreProduccion"];
+        public static string ApiKeyIvolucionProduccion = ConfigurationManager.AppSettings["apiKeyIvolucionProduccion"];
 
         public static bool pruebas = Convert.ToBoolean(ConfigurationManager.AppSettings["pruebas"]);
         public static string UrlReportPatagonianPruebas = ConfigurationManager.AppSettings["urlReportPatagonianPruebas"];

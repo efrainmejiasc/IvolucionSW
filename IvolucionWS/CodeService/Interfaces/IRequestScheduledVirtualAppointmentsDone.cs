@@ -8,6 +8,6 @@ namespace CodeService.Interfaces
 {
     public interface IRequestScheduledVirtualAppointmentsDone
     {
-        Task<bool> GetRequestSheduleVirtualAppointmensDone(string url);
+        Task<bool> GetRequestSheduleVirtualAppointmensDone(string url, string apiKey);
     }
 }

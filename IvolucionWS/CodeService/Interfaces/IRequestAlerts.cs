@@ -8,6 +8,6 @@ namespace CodeService.Interfaces
 {
     public interface IRequestAlerts
     {
-        Task<bool> GetRequestAlerts(string url);
+        Task<bool> GetRequestAlerts(string url, string apiKey);
     }
 }

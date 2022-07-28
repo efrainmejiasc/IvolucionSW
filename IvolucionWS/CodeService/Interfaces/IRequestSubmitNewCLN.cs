@@ -8,6 +8,6 @@ namespace CodeService.Interfaces
 {
     public interface IRequestSubmitNewCLN
     {
-        Task<bool> GetRequestSubmitNewCLN(string url);
+        Task<bool> GetRequestSubmitNewCLN(string url, string apiKey);
     }
 }

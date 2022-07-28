@@ -9,7 +9,7 @@ namespace CodeService.Interfaces
 {
     public interface IRequestReportPatagonian
     {
-        Task<ResponseReportPatagonian> ExecuteReportPatagonian(string url);
+        Task<ResponseReportPatagonian> ExecuteReportPatagonian(string url, string apiKey);
 
     }
 }

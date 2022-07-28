@@ -8,6 +8,6 @@ namespace CodeService.Interfaces
 {
     public interface IRequestOffers
     {
-        Task<bool> GetRequestOffers(string url);
+        Task<bool> GetRequestOffers(string url, string apiKey);
     }
 }

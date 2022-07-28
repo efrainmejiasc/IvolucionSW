@@ -12,14 +12,14 @@ namespace CodeService.Services
 {
     public class RequestOffers : IRequestOffers
     {
-        public async Task<bool> GetRequestOffers(string url)
+        public async Task<bool> GetRequestOffers(string url, string apiKey)
         {
             var respuesta = string.Empty;
             var result = false;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Add("Apikey", EnviromentVar.ApiKeyIvolucion);
+            client.DefaultRequestHeaders.Add("Apikey", apiKey);
             HttpResponseMessage response = await client.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
